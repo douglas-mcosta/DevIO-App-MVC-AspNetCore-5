@@ -39,5 +39,6 @@ Tambem trabalhamos com a arquitetura em três camadas Presentation, Bussiness e 
 No visual Studio abra o Packge Manager Console e execute os comandos abaixo
 * Update-Database -Context ApplicationContext
 * Update-Database -Context MeuDbContext
-
+## Claims 
+Para adicionar as Claims utilizer a tabela AspNetUserClaims
 ## Telas do Sistema
