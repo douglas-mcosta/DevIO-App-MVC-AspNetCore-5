@@ -1,0 +1,47 @@
+﻿@using DevIO.App.Extensions;
+@model DevIO.App.DTO.FornecedorDTO
+
+@{
+    ViewData["Title"] = "Excluir Fornecedor";
+}
+
+
+<div>
+    <h4 class="pt-3">@ViewData["Title"]</h4>
+    <h5>Essa ação é permanente</h5>
+    <hr />
+
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Documento)
+        </dt>
+        <dd class="col-sm-10">
+            @this.FormatarDocumento(Model.TipoFornecedor, Model.Documento)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoFornecedor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TipoFornecedor)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ativo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ativo)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Excluir" class="btn btn-danger" /> 
+        <a asp-action="Index" class="btn btn-info">Voltar</a>
+    </form>
+</div>
+<partial name="_EnderecoDetails"/>

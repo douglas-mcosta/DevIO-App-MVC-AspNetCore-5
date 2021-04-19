@@ -1,0 +1,23 @@
+﻿@if (ViewData.ModelState.ErrorCount > 0)
+{
+    <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">Ops!</h4>
+        <p>Revise os dados abaixo.</p>
+        <hr>
+        <p class="mb-0"><div asp-validation-summary="ModelOnly" class="text-danger"></div></p>
+    </div>
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.Sucess))
+{
+    <div class="alert alert-success" role="alert">
+        @ViewBag.Sucess
+    </div>
+}
+
+@if (TempData["Sucesso"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @Html.Raw(TempData["Sucesso"].ToString())
+    </div>
+}

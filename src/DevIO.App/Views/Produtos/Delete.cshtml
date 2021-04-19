@@ -1,0 +1,64 @@
+﻿@model DevIO.App.DTO.ProdutoDTO
+
+@{
+    ViewData["Title"] = "Excluir - " + Model.Nome;
+}
+
+<div>
+    <h4 class="pt-3">@ViewData["Title"]</h4>
+    <h5>Você tem certeza?</h5>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <img class="img-thumbnail" src="~/imagens/@Model.Imagem" alt="@Model.Imagem" />
+        </div>
+        <div class="col-md-6">
+            <dl>
+
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Nome)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Nome)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Descricao)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Descricao)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Imagem)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Imagem)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Valor)
+                </dt>
+                <dd class="col-sm-10">
+                    @Model.Valor.ToString("C")
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Ativo)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Ativo)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Fornecedor)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Fornecedor.Documento)
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+<div class="pt-3">
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a class="btn btn-info" href="javascript:window.history.back();">Voltar</a>
+    </form>
+</div>
